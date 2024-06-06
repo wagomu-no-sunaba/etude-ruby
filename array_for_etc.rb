@@ -68,10 +68,10 @@
 # pp range2.include?(4) #=> true
 # pp range2.include?(4.9) #=> true
 
-def liquid?(temperature)
-  (0...100).include?(temperature)
-end
-pp liquid?(-1) #=> false
-pp liquid?(0) #=> true
-pp liquid?(99) #=> true
-pp liquid?(100) #=> false
+# def liquid?(temperature)
+#   (0...100).include?(temperature)
+# end
+# pp liquid?(-1) #=> false
+# pp liquid?(0) #=> true
+# pp liquid?(99) #=> true
+# pp liquid?(100) #=> false
