@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 文字列
 a = 'Hello Ruby'
 puts a
@@ -65,3 +67,79 @@ puts e #=> "true"
 # b = 'Hello, #{name}' #=> Hello, #{name}
 #
 # puts "Hello\\nWorld" #=> Hello\nWorld
+#
+# 暗黙的な型変換はおこなわれない
+
+n  = 10
+if n > 5
+  puts 'nは5より大きい'
+else
+  puts 'nは5以下'
+end
+
+country = 'italy'
+greeting =
+  # if country == 'japan'
+  #   'こんにちは'
+  # elsif country == 'us'
+  #   'Hello'
+  # elsif country == 'italy'
+  #   'ciao'
+  # else
+  #   '???'
+  # end
+  case country
+  when 'japan', '日本'
+    'こんにちは'
+  when 'us', 'アメリカ'
+    'Hello'
+  when 'italy', 'イタリア'
+    'ciao'
+  else
+    '???'
+  end
+
+puts greeting
+
+def add(num1, num2)
+  num1 + num2
+end
+
+puts add(1, 2) #=> 3
+
+puts %(hello#{add(1, 2)})
+
+# ヒアドキュメント
+a = <<TEXT
+  これはヒアドキュメントです
+複数行にわたる長い文字列を作成するのに便利です
+# hello
+TEXT
+puts a
+
+# <<~を使うと内部のインデントが無視される
+b = <<~TEXT
+これはヒアドキュメントです
+複数行にわたる長い文字列を作成するのに便利です
+# hello
+TEXT
+puts b
+
+def some_method
+  # <<-を使うと最後の識別子をインデントさせることができる
+  <<-TEXT
+これはヒアドキュメントです
+複数行にわたる長い文字列を作成するのに便利です
+# hello
+  TEXT
+end
+puts some_method
+
+# ラショナル
+r = 2 / 3r
+puts r #=> 2/3
+
+puts __FILE__ #=> sample.rb
+# この行の行番号を表示
+puts __LINE__ #=> 144
+puts __ENCODING__ #=> UTF-8
