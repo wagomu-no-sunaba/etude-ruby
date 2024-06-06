@@ -75,3 +75,21 @@
 # pp liquid?(0) #=> true
 # pp liquid?(99) #=> true
 # pp liquid?(100) #=> false
+
+# caseと組み合わせても使える
+# def charge(age)
+#   case age
+#   when 0..5
+#     0
+#   when 6..12
+#     300
+#   when 13..18
+#     600
+#   else
+#     1000
+#   end
+# end
+
+# a = (1..5).to_a
+# a = [*1..5] # これでも同じ
+# pp a #=> [1, 2, 3, 4, 5]
